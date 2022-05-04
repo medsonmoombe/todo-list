@@ -2,36 +2,27 @@ import "./index.css";
 
 const todos = [
   {
-    description: 'Road Run',
+    description: 'Wash the dishes',
     completed: true,
     index: 0,
   },
 
   {
-    description: 'Bath',
+    description: 'Complete To Do list project',
     completed: true,
     index: 1,
   },
-  {
-    description: 'Code',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Complete Project',
-    completed: false,
-    index: 3,
-  },
+  
 ];
 
 const todoDisplay = document.querySelector('.todos-display');
 const showtodo =() =>{
     let li = '';
 
-        todos.forEach((todo, id) => {
+        todos.forEach((todo, index) => {
             li += `
             <label for="checkbox">
-            <input type="checkbox" ${id}>
+            <input type="checkbox" ${index}>
             <p class="my-todo" contenteditable="true">${todo.description}</p>
             <div class="show-options">
             <i class="fa-solid fa-ellipsis-vertical"></i>

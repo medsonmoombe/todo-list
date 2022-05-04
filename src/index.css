@@ -60,8 +60,9 @@ body {
 }
 
 .arrowz {
-  padding-left: 15px;
   font-size: 28px;
+  position: absolute;
+  right: 9px;
 }
 
 .todos-display {
