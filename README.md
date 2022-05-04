@@ -1,6 +1,7 @@
 # todo-list
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
+![image](https://user-images.githubusercontent.com/98400013/166829817-5f6f4c73-699d-46cd-a6cf-7b09ace83fbe.png)
 
 
 
@@ -16,7 +17,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link]()
+[Live Demo Link]( https://medsonmoombe.github.io/todo-list/)
 
 
 
@@ -32,8 +33,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 ```bash
-git clone ()
-cd 
+git clone (https://github.com/medsonmoombe/todo-list)
+cd todo-list-first
 ```
 
 
