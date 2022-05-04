@@ -1,4 +1,4 @@
-import "./index.css";
+import './index.css';
 
 const todos = [
   {
@@ -12,15 +12,15 @@ const todos = [
     completed: true,
     index: 1,
   },
-  
+
 ];
 
 const todoDisplay = document.querySelector('.todos-display');
-const showtodo =() =>{
-    let li = '';
+const showtodo = () => {
+  let li = '';
 
-        todos.forEach((todo, index) => {
-            li += `
+  todos.forEach((todo, index) => {
+    li += `
             <label for="checkbox">
             <input type="checkbox" ${index}>
             <p class="my-todo" contenteditable="true">${todo.description}</p>
@@ -32,9 +32,9 @@ const showtodo =() =>{
             </div>
         </label>
             `;
-        });
-      todoDisplay.innerHTML = li;
-    }
+  });
+  todoDisplay.innerHTML = li;
+};
 
 showtodo();
 
