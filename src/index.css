@@ -23,7 +23,6 @@ body {
 }
 
 .heading-section {
-    /* margin-bottom: 28px; */
     border-bottom: 1px solid lightgray;
     display: flex;
     justify-content: space-between;
@@ -31,7 +30,6 @@ body {
 }
 
 .todayTodo {
-    /* font-family: sans-serif; */
     font-size: 16px;
     font-weight: 500;
     color: gray;
