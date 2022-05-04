@@ -1,160 +1,151 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    width: 100%;
-    background: #eee;
+  width: 100%;
+  background: #eee;
 }
 
-.wrapper {   
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80%;
-    background-color: #fff;
-    margin: auto;
-    margin-top: 10%;
-    box-shadow: 5px 5px 9px 1px grey;
-    border-radius: 3px;
-    font-family: 'Poppins', sans-serif;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 10%;
+  box-shadow: 5px 5px 9px 1px grey;
+  border-radius: 3px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .heading-section {
-    border-bottom: 1px solid lightgray;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .todayTodo {
-    font-size: 16px;
-    font-weight: 500;
-    color: gray;
+  font-size: 16px;
+  font-weight: 500;
+  color: gray;
 }
 
 .fa-rotate {
-    color: gray;
-    font-size: 12px;
-    align-self: center;
+  color: gray;
+  font-size: 12px;
+  align-self: center;
 }
 
 .input-todo-field {
-    position: relative;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
+  position: relative;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
 }
 
 .todo-input {
-    border: none;
-    width: 90%;
-    font-size: 15px;
-    outline: none;
+  border: none;
+  width: 90%;
+  font-size: 15px;
+  outline: none;
 }
 
 ::placeholder {
-    color: lightgray;
-    font-style: italic;
-  }
+  color: lightgray;
+  font-style: italic;
+}
 
-  .arrowz {
-    padding-left: 15px;
-    font-size: 28px;
-  }
+.arrowz {
+  padding-left: 15px;
+  font-size: 28px;
+}
 
 .todos-display {
-    display: flex;
-    
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 label {
-    position: relative;
-    display: flex;
-    justify-content: start;
-    width: inherit;
-    padding: 10px;
-    /* font-family: sans-serif; */
-    font-size: 16px;
-    border-bottom: 1px solid lightgray;
-    gap: 10px;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  width: inherit;
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid lightgray;
+  gap: 10px;
 }
 
 input#check {
-    accent-color: green;
-    width: 16px;
-    height: 26px;
+  width: 16px;
+  height: 26px;
 }
 
 .checked {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .fa-ellipsis-vertical {
-    align-self: center;
-    position: absolute;
-    right: 9px;
-    color: lightgray;
+  align-self: center;
+  position: absolute;
+  right: 9px;
+  color: lightgray;
 }
 
 .fa-trash-can {
-    display: none;
+  display: none;
 }
 
 .fa-trash-can.active {
-    display: flex;
-    align-self: center;
-    position: absolute;
-    right: 15px;
-    background: #eee;
-    width: 50px;
-    height: 28px;
-    text-align: center;
-    padding-top: 6px;
-    padding-left: 17px;
+  display: flex;
+  align-self: center;
+  position: absolute;
+  right: 15px;
+  background: #eee;
+  width: 50px;
+  height: 28px;
+  text-align: center;
+  padding-top: 6px;
+  padding-left: 17px;
 }
 
 .my-todo {
-    font-size: 15px;
-    color: gray;
-    width: inherit;
+  font-size: 15px;
+  color: gray;
+  width: inherit;
 }
 
 .show-options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .clear-todos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #eee;
-    border: 1px solid lightgrey;
-    border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #eee;
+  border: 1px solid lightgrey;
+  border: 0;
 }
 
 .clearAll {
-    border: none;
-    background: #eee;
-    color: grey;
-    /* font-family: sans-serif; */
-    font-size: 15px;
+  border: none;
+  background: #eee;
+  color: grey;
+  font-size: 15px;
 }
 
-
-
-/* css file for second set of todo app */
-
-  
-  [contenteditable]:focus {
-    background: antiquewhite;
-    outline: none;
-  }
+[contenteditable]:focus {
+  background: antiquewhite;
+  outline: none;
+}
