@@ -62,7 +62,6 @@ export default class Task {
     return true;
   };
 
-  
   static deleteTask = (e) => {
     this.tasks = [];
     this.tasks = JSON.parse(localStorage.getItem('tasks')) !== null ? (this.tasks = JSON.parse(localStorage.getItem('tasks'))) : [];
@@ -79,7 +78,6 @@ export default class Task {
     }
   };
 
-  
   static editTask = (index, description) => {
     this.tasks[index - 1].description = description;
     localStorage.setItem('tasks', JSON.stringify(this.tasks));

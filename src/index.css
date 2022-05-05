@@ -1,13 +1,9 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
-}
+} */
 
-body {
-  background-color: #fff;
-}
 
 body {
   font-family: 'poppins', sans-serif;
@@ -38,15 +34,18 @@ body {
 
 .title {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
+  color: gray;
 }
 
 .refresh {
   margin-right: 15px;
+  color: gray;
 }
 
 hr {
   margin: 0;
+  color: gray;
 }
 
 .add-task-container {
@@ -68,6 +67,7 @@ hr {
   font-style: italic;
   font-size: 15px;
   font-weight: 200;
+  color: gray;
 }
 
 .add-task-btn {
@@ -76,6 +76,7 @@ hr {
   border-radius: 0;
   background-color: #fff;
   height: inherit;
+  color: gray;
 }
 
 .add-task-btn:hover {
@@ -93,6 +94,7 @@ hr {
 
 .check {
   margin: 0 8px;
+  color: gray;
 }
 
 .check:hover {
@@ -113,6 +115,7 @@ hr {
 
 .edit-icon {
   margin: 0 8px;
+  color: gray;
 }
 
 .edit-icon:hover {
@@ -132,6 +135,8 @@ hr {
   width: 100%;
   border: 0;
   background-color: #eee;
+  color: gray;
+  font-size: 15px;
 }
 
 .clear-btn:hover {
