@@ -1,16 +1,19 @@
 import './index.css';
-import List from './todo-list.js';
+import Task from './todo-list.js';
 
-const todolist = new List();
-todolist.display();
+const addTaskInput = document.querySelector('.add-task-input');
+const addBtn = document.querySelector('.add-task-btn');
+const mainTasksCont = document.querySelector('.main-tasks');
+const clearComplete = document.querySelector('.clear-btn');
 
-document.querySelector('#form-area').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const activity = e.target.elements.activity.value;
-  todolist.addWork(activity);
-  e.target.reset();
+addBtn.addEventListener('click', Task.addTask);
+addTaskInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    Task.addTask(e);
+  }
 });
 
-document.querySelector('#delete-all').addEventListener('click', () => {
-  todolist.clearAll();
-});
+mainTasksCont.addEventListener('click', Task.deleteTask);
+clearComplete.addEventListener('click', Task.clearComplete);
+document.addEventListener('DOMContentLoaded', Task.showTasks);
+document.addEventListener('DOMContentLoaded', Task.actions);
