@@ -34,7 +34,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 ```bash
 git clone (https://github.com/medsonmoombe/todo-list)
-cd todo-list-first
+cd todo-list-add-and-remove
 ```
 
 
