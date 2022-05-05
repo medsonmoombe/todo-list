@@ -1,10 +1,3 @@
-/* * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-} */
-
-
 body {
   font-family: 'poppins', sans-serif;
   background-color: #fff;
@@ -61,7 +54,6 @@ hr {
   padding-left: 10px;
   outline: none;
 }
-
 
 .add-task-input::placeholder {
   font-style: italic;
