@@ -61,4 +61,21 @@ export default class Task {
     this.showTasks();
     return true;
   };
+
+  
+  static deleteTask = (e) => {
+    this.tasks = [];
+    this.tasks = JSON.parse(localStorage.getItem('tasks')) !== null ? (this.tasks = JSON.parse(localStorage.getItem('tasks'))) : [];
+
+    if (e.target.classList.contains('edit-icon')) {
+      const id = Number(e.target.parentNode.attributes.id.value);
+      this.tasks.splice((id - 1), 1);
+      this.tasks.forEach((task, index) => {
+        task.index = index + 1;
+      });
+      this.tasks.sort((x, y) => x.index - y.index);
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      this.showTasks();
+    }
+  };
 }
