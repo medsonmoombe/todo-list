@@ -1,7 +1,8 @@
 # todo-list
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-![image](https://user-images.githubusercontent.com/98400013/166829817-5f6f4c73-699d-46cd-a6cf-7b09ace83fbe.png)
+![image](https://user-images.githubusercontent.com/98400013/166960041-dbe6029a-8150-4e91-9c32-4e57988e9cbf.png)
+
 
 
 
@@ -46,6 +47,19 @@ cd todo-list-add-and-remove
 - GitHub: [@medsonmoombe](https://github.com/medsonmoombe)
 - Twitter: [@emmanue78388405](https://twitter.com/@emmanue78388405)
 - LinkedIn: [@Emmanuel moombe](https://www.linkedin.com/in/emmanuel-moombe-821918230/)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- [inspired by the minimalist website](https://web.archive.org/web/20180320194056/http://www.getminimalist.com:80/)
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
 
 ## 🤝 Contributing
 
