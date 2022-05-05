@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <title>To-do-list-App</title>
+  <title>To Do List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-
 <body>
-  <main>
-    <section class="todolist">
-      <header class="todo">
-        <h2 class="todayTodo">Today's To Do</h2>
-        <span class="material-icons new-item" id="delete-all">
-          autorenew
-        </span>
-      </header>
-      <section class="input-field">
-        <div>
-          <form action="#" id="form-area">
-            <input class="todo-input" type="text" name="activity" id="add-item" placeholder="Add your list here">
-            <button type="submit">
-              <span class="material-icons arrowz return">
-                keyboard_return
-              </span>
-            </button>
-          </form>
-        </div>
-        <div>
-          <ul class="items todos-display">
-          </ul>
-        </div>
-      </section>
-      <footer>
-        <div class="complete-items clear-todos">
-          Clear all completed
-        </div>
-      </footer>
-    </section>
-  </main>
+  <h1 class="main-heading">To Do List</h1>
+  <div class="todo-container">
+    <div class="todo-header">
+      <h2 class="title">Today's To Do</h2>
+      <span class="refresh material-icons">refresh</span>
+    </div>
+    <hr>
+    <form action="#" method="post" name="taskForm" class="add-task-container">
+      <input class="add-task-input" type="text" name="description" id="addTask" placeholder="Add to your list..." required>
+      <span class="add-task-btn material-icons">keyboard_return</span>
+    </form>
+    <hr>
+    <div class="main-tasks"></div>
+    <div class="clear">
+      <button type="button" class="clear-btn">Clear all completed</button>
+    </div>
+  </div>
 </body>
-
 </html>
