@@ -47,26 +47,4 @@ if (todoInput) {
         todoInput.value ='';
         localStorage.setItem('my-todo', JSON.stringify(todos));
         List.showtodo();
-     }
-     
-    });
-    } else if (enterKey){
-    enterKey.addEventListener('click', ()=>{
-        let userTask = todoInput.value;
-        // let todos = JSON.parse(localStorage.getItem('my-todo'));
-        if (userTask === '') {
-            return false;
-          }
-               if (!todos) {
-            todos =[];
-        }
-              
-        
-        let userInfor = {name: userTask, status:'pending'}
-        todos.push(userInfor);
-        todoInput.value ='';
-        // JSON.parse(localStorage.getItem('my-todo'), JSON.stringify(todos));
-        localStorage.setItem('my-todo', JSON.stringify(todos));
-        List.showtodo();
-    });
-}
+    
