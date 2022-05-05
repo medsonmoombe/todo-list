@@ -61,3 +61,79 @@ hr {
   height: inherit;
   padding-left: 10px;
 }
+
+
+.add-task-input::placeholder {
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.add-task-btn {
+  display: inline;
+  border: 0;
+  border-radius: 0;
+  background-color: #fff;
+  height: inherit;
+}
+
+.add-task-btn:hover {
+  cursor: pointer;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  padding: 5px;
+}
+
+.check {
+  margin: 0 8px;
+}
+
+.check:hover {
+  cursor: pointer;
+}
+
+.description {
+  width: 85%;
+  margin: 0 2px;
+  border: 0;
+  height: inherit;
+  outline: none;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.edit-icon {
+  margin: 0 8px;
+}
+
+.edit-icon:hover {
+  cursor: move;
+}
+
+.clear {
+  height: 50px;
+  padding: 0;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+}
+
+.clear-btn {
+  height: inherit;
+  width: 100%;
+  border: 0;
+  background-color: #eee;
+}
+
+.clear-btn:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
