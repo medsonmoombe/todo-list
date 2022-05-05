@@ -1,134 +1,64 @@
-class List {
-  constructor() {
-    this.list = JSON.parse(localStorage.getItem('todolist'));
-    if (!this.list) {
-      this.list = [];
-    }
-    this.display();
-  }
+const { taskForm } = document.forms;
+const { description } = taskForm;
 
-  display() {
-    this.saveData();
-    const listSection = document.querySelector('.items');
-    listSection.innerHTML = '';
-    this.list.forEach((work) => {
-      let taskItem = `
-     <li class="list-items" id="item-data-${work.index}">`;
-      if (work.completed) {
-        taskItem += `
-            <span class="material-icons done update-status" data="${work.index}">
-              done
-            </span>
-            <p contenteditable="true" class="completed work" data="${work.index}">
-              ${work.description}
-            </p>
-            `;
+const mainTasks = document.querySelector('.main-tasks');
+
+export default class Task {
+  static showTasks = () => {
+    this.tasks = [];
+    this.tasks = JSON.parse(localStorage.getItem('tasks')) !== null ? (this.tasks = JSON.parse(localStorage.getItem('tasks'))) : [];
+    mainTasks.innerHTML = '';
+    this.tasks.forEach((task) => {
+      let taskTemplate = `<div class="tasks-container" id="${task.index}">`;
+      if (task.completed) {
+        taskTemplate += `
+                  <span class="material-icons check" id="${task.index}">
+                    done
+                  </span>
+                  <input type="text" class="description completed" id="${task.index}" value="${task.description}">
+                  <span class="edit-icon material-icons">delete<span>
+                  </div>
+                  <hr>
+                  `;
       } else {
-        taskItem += `
-            <span class="material-icons  update-status"  data="${work.index}">
-              check_box_outline_blank
-            </span>
-            <p contenteditable="true" class="work" data="${work.index}">
-              ${work.description}
-            </p>`;
+        taskTemplate += `
+                  <span class="material-icons check" id="${task.index}">
+                    check_box_outline_blank
+                  </span>
+                  <input type="text" class="description" id="${task.index}" value="${task.description}">
+                  <span class="edit-icon material-icons">delete<span>
+                  </div>
+                  <hr>
+                  `;
       }
-      taskItem += `
-          <span class="material-icons delete-work" data="${work.index}">
-            delete
-          </span>
-        </li>
-      `;
-      listSection.innerHTML += taskItem;
+
+      mainTasks.innerHTML += taskTemplate;
     });
-    this.activateActions();
-  }
+    this.actions();
+  };
 
-  // add new activity
-  addWork(work) {
-    if (work || work === 0) {
-      const newWork = {
-        description: work,
-        completed: false,
-        index: this.list.length,
-      };
-      this.list.push(newWork);
-      this.display();
+  static addTask = (e) => {
+    e.preventDefault();
+
+    this.tasks = [];
+    this.tasks = JSON.parse(localStorage.getItem('tasks')) !== null ? (this.tasks = JSON.parse(localStorage.getItem('tasks'))) : [];
+
+    const task = {
+      description: '',
+      completed: false,
+      index: 0,
+    };
+
+    if (description.value === '') {
+      return false;
     }
-  }
 
-  updateActivityStatus(workIndex) {
-    if (workIndex !== undefined) {
-      if (this.list[workIndex].completed === true) {
-        this.list[workIndex].completed = false;
-      } else {
-        this.list[workIndex].completed = true;
-      }
-    }
-    this.display();
-  }
-
-  deleteWork(workIndex) {
-    if (workIndex) {
-      this.list.splice(workIndex, 1);
-      this.display();
-    }
-  }
-
-  clearCompletedActivity() {
-    this.list = this.list.filter((work) => work.completed === false);
-    this.display();
-  }
-
-  clearAll() {
-    this.list.splice(0);
-    this.display();
-  }
-
-  saveData() {
-    for (let i; i < this.list.length; i += 1) {
-      this.list[i].index = i;
-    }
-    this.list.sort((a, b) => {
-      if (a.index < b.index) return -1;
-      if (a.index > b.index) return 1;
-      return 0;
-    });
-    localStorage.setItem('todolist', JSON.stringify(this.list));
-  }
-
-  editActivity(index, description) {
-    this.list[index].description = description;
-    this.saveData();
-  }
-
-  activateActions() {
-    const updateStatusBtns = document.querySelectorAll('.update-status');
-    if (updateStatusBtns !== null) {
-      updateStatusBtns.forEach((item) => {
-        item.addEventListener('click', () => {
-          this.updateActivityStatus(item.getAttribute('data'));
-        });
-      });
-    }
-    const deleteBtns = document.querySelectorAll('.delete-work');
-    if (deleteBtns) {
-      deleteBtns.forEach((work) => {
-        work.addEventListener('click', () => {
-          this.deleteWork(work.getAttribute('data'));
-        });
-      });
-    }
-    const activities = document.querySelectorAll('.work');
-    if (activities) {
-      activities.forEach((work) => {
-        work.addEventListener('input', (e) => {
-          const description = e.target.innerText;
-          const index = e.target.getAttribute('data');
-          this.editActivity(index, description);
-        });
-      });
-    }
-  }
+    task.description = description.value;
+    task.index = this.tasks.length + 1;
+    this.tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    description.value = '';
+    this.showTasks();
+    return true;
+  };
 }
-
-export default List;

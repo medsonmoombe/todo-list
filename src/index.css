@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'poppins', sans-serif;
   background-color: #fff;
 }
 
@@ -60,6 +60,7 @@ hr {
   width: 90%;
   height: inherit;
   padding-left: 10px;
+  outline: none;
 }
 
 
