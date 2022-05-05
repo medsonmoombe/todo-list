@@ -63,6 +63,7 @@ body {
   font-size: 28px;
   position: absolute;
   right: 9px;
+  cursor: pointer;
 }
 
 .todos-display {
