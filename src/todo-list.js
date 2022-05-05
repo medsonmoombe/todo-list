@@ -78,4 +78,51 @@ export default class Task {
       this.showTasks();
     }
   };
+
+  
+  static editTask = (index, description) => {
+    this.tasks[index - 1].description = description;
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  };
+
+  static updateStatus(index) {
+    if (index !== undefined) {
+      if (this.tasks[index - 1].completed === true) {
+        this.tasks[index - 1].completed = false;
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      } else {
+        this.tasks[index - 1].completed = true;
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+      }
+    }
+    this.showTasks();
+  }
+
+  static clearComplete = () => {
+    this.tasks = this.tasks.filter((task) => task.completed !== true);
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    this.showTasks();
+  }
+
+  static actions = () => {
+    const allTasks = document.querySelectorAll('.tasks-container');
+    if (allTasks) {
+      allTasks.forEach((vTask) => {
+        vTask.addEventListener('change', (e) => {
+          const index = e.target.getAttribute('id');
+          const description = e.target.value;
+          this.editTask(index, description);
+          this.showTasks();
+        });
+      });
+    }
+    const statusBtns = document.querySelectorAll('.check');
+    if (statusBtns !== null) {
+      statusBtns.forEach((checkBtn) => {
+        checkBtn.addEventListener('click', (e) => {
+          this.updateStatus(e.target.attributes.id.value);
+        });
+      });
+    }
+  }
 }
