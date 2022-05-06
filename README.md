@@ -18,7 +18,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link]( https://medsonmoombe.github.io/todo-list/)
+[Live Demo Link](https://medsonmoombe.github.io/todo-list/)
 
 
 
