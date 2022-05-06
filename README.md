@@ -38,6 +38,36 @@ cd todo-list-add-and-remove
 ```
 
 
+```bash
+npm install
+```
+
+```bash
+npm build
+```
+
+```bash
+npm start
+```
+
+### Run the following commands to run linter tests
+
+WebHint
+```bash
+npx hint .
+```
+
+StyleLint
+```bash
+npx stylelint "**/*.{css,scss}"
+```
+
+ESLint
+```bash
+npx eslint .
+```
+
+
 
 ## Authors
 
