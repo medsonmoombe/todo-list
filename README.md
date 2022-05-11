@@ -71,12 +71,23 @@ npx eslint .
 
 ## Authors
 
-👤 **Author**
+👤 **Author1**
 
 - GitHub: [@medsonmoombe](https://github.com/medsonmoombe)
 - Twitter: [@emmanue78388405](https://twitter.com/@emmanue78388405)
 - LinkedIn: [@Emmanuel moombe](https://www.linkedin.com/in/emmanuel-moombe-821918230/)
 
+👤 **Author2**
+
+- GitHub: [Emmanuel Paul](https://github.com/Epaltechs/Webpack)
+- Twitter: [Emmanuel Paul](http://twitter.com/@emmapaul247)
+- LinkedIn: [Emmanuel Paul](https://www.linkedin.com/in/emmanuel-paul-a2bab7b4)
+
+👤 **Author3**
+
+- GitHub: [@abiodunraheem](https://github.com/abiodunraheem)
+- Twitter: [@abiodunraheem](https://twitter.com/Raheemabiodun23)
+- Email: [email](raheemabiodun23@gmail.com)
 ## Show your support
 
 Give a ⭐️ if you like this project!
