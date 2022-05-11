@@ -1,80 +1,54 @@
-import { Task } from './src/todo-list.js';
+import Task from './src/todo-list.js';
 
-describe('Adding an item to store', () => {
-  test('should contain single item', () => {
-    const store = new Task();
+document.body.innerHTML = `
+<section>
+<h1 class="main-heading">To Do List</h1>
+<div class="todo-container">
+  <div class="todo-header">
+    <h2 class="title">Today's To Do</h2>
+    <span class="refresh material-icons">refresh</span>
+  </div>
+  <hr>
+  <form name="taskForm" class="add-task-container">
+    <input class="add-task-input" type="text" name="description" id="addTask" placeholder="Add to your list..." required>
+    <span class="add-task-btn material-icons">keyboard_return</span>
+  </form>
+  <hr>
+  <div class="main-tasks"></div>
+  <div class="clear">
+    <button type="button" class="clear-btn">Clear all completed</button>
+  </div>
+</div>
+</section>
+`;
 
-    store.addTask('Testing with Jest');
+const task = new Task();
 
-    expect(store.tasks).toHaveLength(1);
+const taskOne = 'play soccer';
+const taskTwo = 'Task Two';
+
+describe('check if add and delete task are using localStorage and the DOM', () => {
+  test('should add a task to localStorage', () => {
+    task.addTask(taskOne);
+    task.addTask(taskTwo);
+    expect(JSON.parse(localStorage.getItem('tasks'))).toEqual([
+      { description: taskOne, completed: false, index: 1 },
+      { description: taskTwo, completed: false, index: 2 },
+    ]);
   });
 
-//   test('should not add a todo with empty string', () => {
-//     const store = new Store();
+  test('should add tasks to the DOM', () => {
+    const addedItems = document.querySelectorAll('.tasks-container');
+    expect(addedItems.length).toBe(2);
+  });
 
-//     store.addTodo('');
+  test('should remove task from localStorage', () => {
+    task.deleteTask(1);
+    expect(JSON.parse(localStorage.getItem('tasks'))).toHaveLength(1);
+  });
 
-//     expect(store.todos).toHaveLength(0);
-//   });
-// });
-
-// describe('Removing an item from store', () => {
-//   test('should not have any elements', () => {
-//     const store = new Store();
-
-//     store.addTodo('Testing with Jest');
-//     store.deleteTodo(0);
-
-//     expect(store.todos).toHaveLength(0);
-//   });
-// });
-
-// describe('Update', () => {
-//   test('should edit the item description', () => {
-//     const store = new Store();
-
-//     store.addTodo('Testing with Jest');
-//     store.editTodo(0, 'Editing with Jest');
-
-//     const todo = store.todos[0];
-
-//     expect(todo.description).toBe('Editing with Jest');
-//   });
-
-//   test("should update item's 'completed' status", () => {
-//     const store = new Store();
-
-//     store.addTodo('Testing with Jest');
-//     store.toggleTodo(0);
-//     const todo = store.todos[0];
-
-//     expect(todo.completed).toBeTruthy();
-//   });
-
-//   test('should update index upon drag/drop', () => {
-//     const store = new Store();
-//     const items = [
-//       { index: 0, description: 'Item 1', completed: false },
-//       { index: 1, description: 'Item 2', completed: false },
-//     ];
-
-//     store.loadTodos(items);
-//     store.swapTodos(0, 1);
-//     const firstItem = store.todos[0];
-
-//     expect(firstItem.index).toBe(0);
-//     expect(firstItem.description).toBe('Item 2');
-//   });
-
-//   test('should clear all completed to-dos', () => {
-//     const store = new Store();
-//     const items = [
-//       { index: 0, description: 'Item 1', completed: true },
-//       { index: 1, description: 'Item 2', completed: false },
-//     ];
-
-//     store.loadTodos(items);
-//     store.clearCompleted();
-//     expect(store.todos).toHaveLength(1);
-//   });
- });
+  test('should remove task from the DOM', () => {
+    const addedItems = document.querySelectorAll('.tasks-container');
+    expect(addedItems.length).toBe(1);
+  });
+});
