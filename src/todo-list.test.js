@@ -1,4 +1,4 @@
-import Task from './src/todo-list.js';
+import Task from './todo-list';
 
 document.body.innerHTML = `
 <section>
@@ -24,7 +24,7 @@ document.body.innerHTML = `
 
 const task = new Task();
 
-const taskOne = 'play soccer';
+const taskOne = 'Task One';
 const taskTwo = 'Task Two';
 
 describe('check if add and delete task are using localStorage and the DOM', () => {

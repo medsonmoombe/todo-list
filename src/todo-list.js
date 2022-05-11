@@ -51,7 +51,7 @@ export default class Task {
     task.index = this.tasks.length + 1;
     this.tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
-    descrip.value = '';
+    // descrip.value = '';
     this.showTasks();
     return true;
   };
