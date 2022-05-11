@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 
- import Task from './todo-list.js';
+import Task from './todo-list.js';
 
- document.body.innerHTML = `
+document.body.innerHTML = `
  <section>
  <h1 class="main-heading">To Do List</h1>
  <div class="todo-container">
@@ -25,37 +25,34 @@
  </div>
  </section>
  `;
- 
- const task = new Task();
- 
- const taskOne = 'Task One';
- const taskTwo = 'Task Two';
- const taskThree = 'Task Three';
- 
- describe('check if add and delete task are using localStorage and the DOM', () => {
-   test('should add a task to localStorage', () => {
-     task.addTask(taskOne);
-     task.addTask(taskTwo);
-     expect(JSON.parse(localStorage.getItem('tasks'))).toEqual([
-       { description: taskOne, completed: false, index: 1 },
-       { description: taskTwo, completed: false, index: 2 },
-     ]);
-   });
- 
-   test('should add tasks to the DOM', () => {
-     const addedItems = document.querySelectorAll('.tasks-container');
-     expect(addedItems.length).toBe(2);
-   });
- 
-   test('should remove task from localStorage', () => {
-     task.deleteTask(1);
-     expect(JSON.parse(localStorage.getItem('tasks'))).toHaveLength(1);
-   });
- 
-   test('should remove task from the DOM', () => {
-     const addedItems = document.querySelectorAll('.tasks-container');
-     expect(addedItems.length).toBe(1);
-   });
- });
- 
- 
+
+const task = new Task();
+
+const taskOne = 'Task One';
+const taskTwo = 'Task Two';
+
+describe('check if add and delete task are using localStorage and the DOM', () => {
+  test('should add a task to localStorage', () => {
+    task.addTask(taskOne);
+    task.addTask(taskTwo);
+    expect(JSON.parse(localStorage.getItem('tasks'))).toEqual([
+      { description: taskOne, completed: false, index: 1 },
+      { description: taskTwo, completed: false, index: 2 },
+    ]);
+  });
+
+  test('should add tasks to the DOM', () => {
+    const addedItems = document.querySelectorAll('.tasks-container');
+    expect(addedItems.length).toBe(2);
+  });
+
+  test('should remove task from localStorage', () => {
+    task.deleteTask(1);
+    expect(JSON.parse(localStorage.getItem('tasks'))).toHaveLength(1);
+  });
+
+  test('should remove task from the DOM', () => {
+    const addedItems = document.querySelectorAll('.tasks-container');
+    expect(addedItems.length).toBe(1);
+  });
+});

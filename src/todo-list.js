@@ -43,7 +43,7 @@ export default class Task {
       index: 0,
     };
 
-    if (descrip =='') {
+    if (descrip === '') {
       return false;
     }
 

@@ -13,7 +13,7 @@ const task = new Task();
 
 addBtn.addEventListener('click', () => {
   task.addTask(description.value);
-  description.value ='';
+  description.value = '';
 });
 addTaskInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
