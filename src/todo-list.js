@@ -43,7 +43,7 @@ export default class Task {
       index: 0,
     };
 
-    if (descrip === '') {
+    if (descrip =='') {
       return false;
     }
 
@@ -51,7 +51,6 @@ export default class Task {
     task.index = this.tasks.length + 1;
     this.tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
-    // descrip.value = '';
     this.showTasks();
     return true;
   };
