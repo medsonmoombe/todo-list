@@ -58,7 +58,7 @@ describe('check if add and delete task are using localStorage and the DOM', () =
   });
 });
 
-//new
+// new
 
 describe('Check status, content updates and clear all completed tasks', () => {
   test('should check if status is changed', () => {
