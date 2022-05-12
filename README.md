@@ -99,7 +99,7 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](https://github.com/medsonmoombe/todo-list/blob/todo-list-add-and-remove/LICENSE)) licensed.
+This project is [MIT](https://github.com/medsonmoombe/todo-list/blob/todo-list-add-and-remove/LICENSE) licensed.
 
 ## 🤝 Contributing
 
