@@ -9,7 +9,7 @@ body {
 }
 
 .todo-container {
-  width: 600px;
+  width: 50%;
   min-height: 150px;
   margin: 0 auto;
   margin-top: 50px;
@@ -94,12 +94,19 @@ hr {
 }
 
 .description {
-  width: 85%;
+  width: 50%;
   margin: 0 2px;
   border: 0;
   height: inherit;
   outline: none;
 }
+
+.input-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 .completed {
   text-decoration: line-through;
@@ -134,4 +141,10 @@ hr {
 .clear-btn:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .todo-container {
+    width: 95%;
+  }
 }
